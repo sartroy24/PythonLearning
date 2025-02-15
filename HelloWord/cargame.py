@@ -1,5 +1,5 @@
 command = ""
-while command != "quit":
+while command.lower() != "quit":
     command = input("Enter the command:")
     if command.lower() == "start":
         print("Your car has started")
