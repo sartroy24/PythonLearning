@@ -6,23 +6,15 @@ data = {
 def linearSearch(cards, query):
     #Create a variable position with value of 0
     position = 0
-    
     #Set up a loop for repetition
-    while True:
-        
+    while position < len(cards):        
         #Check if element at the current position matches the query
-        if cards[position] == query:
-            
+        if cards[position] == query:            
             #Answer found! Return and exit..
-            return position
-        
+            return position        
         #Increment the position
         position += 1
-        
-        #Check if we have reached the end of array
-        if position == len(cards):
-            
-            #Number not found return -1
-            return -1
+        #Number not found return -1
+    return -1
             
 print(linearSearch(data['cards'], data['query']))
