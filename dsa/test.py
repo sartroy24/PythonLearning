@@ -1,27 +1,14 @@
-def counting_sort(arr):
-    if not arr:
-        return []
+class Car:
+    def __init__(self, brand):
+        self.brand = brand  # Instance variable
+        self.model = 'Corola'  # Instance variable
 
-    max_value = max(arr)
-    count = [0] * (max_value + 1)  
+    def display(self):
+        print(f"This car is a {self.brand} {self.model}")
 
-    # Step 1: Count occurrences
-    for num in arr:
-        count[num] += 1
+# Creating objects (instances)
+car1 = Car("Toyota")
+car2 = Car("Tesla")
 
-    # Step 2: Modify count array for positions
-    for i in range(1, len(count)):
-        count[i] += count[i - 1]
-
-    # Step 3: Build the sorted output array
-    output = [0] * len(arr)
-    for num in reversed(arr):  # Reverse to maintain stability
-        output[count[num] - 1] = num
-        count[num] -= 1
-
-    return output
-
-# Example Usage
-arr = [4, 2, 2, 8, 3, 3, 1]
-sorted_arr = counting_sort(arr)
-print("Sorted Array:", sorted_arr)
+car1.display()  # Output: This car is a Toyota Corolla
+car2.display()  # Output: This car is a Tesla Model 3
