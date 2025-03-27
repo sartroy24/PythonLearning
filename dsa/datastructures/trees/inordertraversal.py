@@ -3,14 +3,14 @@ class TreeNode:
         self.data = data
         self.left = None
         self.right = None
-
-def preOrderTraversal(node):
+        
+def inOrderTraversal(node):
     if node is None:
         return
+    inOrderTraversal(node.left)
     print(node.data, end=", ")
-    preOrderTraversal(node.left)
-    preOrderTraversal(node.right)
-
+    inOrderTraversal(node.right)
+    
 root = TreeNode('R')
 nodeA = TreeNode('A')
 nodeB = TreeNode('B')
@@ -32,4 +32,6 @@ nodeB.right = nodeF
 nodeF.left = nodeG
 
 # Traverse
-preOrderTraversal(root)
+inOrderTraversal(root)
+
+#Python
