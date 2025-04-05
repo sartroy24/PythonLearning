@@ -118,19 +118,24 @@ def delete(node, data):
     # Balancing the tree
     # Left Left
     if balance > 1 and getBalance(node.left) >= 0:
+        print('Left Left')
         return rightRotate(node)
 
     # Left Right
     if balance > 1 and getBalance(node.left) < 0:
+        print('Left Right')
         node.left = leftRotate(node.left)
         return rightRotate(node)
 
     # Right Right
     if balance < -1 and getBalance(node.right) <= 0:
+        print('node value', node.data)
+        print('Right Right')
         return leftRotate(node)
 
     # Right Left
     if balance < -1 and getBalance(node.right) > 0:
+        print('Right Left')
         node.right = rightRotate(node.right)
         return leftRotate(node)
 
@@ -144,7 +149,7 @@ for letter in letters:
 
 inOrderTraversal(root)
 print('\nDeleting A')
-# root = delete(root,'A')
+root = delete(root,'C')
 inOrderTraversal(root)
 
 #Python
