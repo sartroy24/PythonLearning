@@ -21,3 +21,5 @@ minn = heapq.heappop(A)
 
 print('min value: ', minn)
 print('Updated Heap: ', A)
+
+# Heap push pop: Time: O(log n)
